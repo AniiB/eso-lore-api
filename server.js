@@ -2,10 +2,6 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const PORT = 8000
-
-app.use(cors())
-
-app.use(express.static('public'))
 const lore = {
     "alik'r desert lore": {
         "motalion necropolis report": {
@@ -191,6 +187,29 @@ const lore = {
         }
     }
 }
+
+app.use(cors())
+app.use(express.static('public'))
+
+
+app.listen(process.env.PORT || PORT, () => {
+    console.log('Listening on Port ' + PORT)
+})
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html')
+})
+app.get('/lorebook', (req, res) => {
+    res.json(lore)
+})
+app.get('/lorebook/:category', (req, res) => {
+    const category = req.params.category
+    res.json(lore[category])
+})
+app.get('/lorebook/:category/:bookName', (req, res) => {
+    const category = req.params.category
+    const bookName = req.params.bookName
+    res.json(lore[category][bookName])
+})
 // ,
 // 'daedric princes': [
 
@@ -265,31 +284,3 @@ const lore = {
 
 // ]
 // }
-
-app.listen(process.env.PORT || PORT, () => {
-    console.log('Listening on Port ' + PORT)
-})
-
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
-
-app.get('/lorebook', (req, res) => {
-    res.json(lore)
-})
-
-app.get('/lorebook/:category', (req, res) => {
-    const category = req.params.category
-    res.json(lore[category])
-})
-app.get('/lorebook/:category/:bookName', (req, res) => {
-    const category = req.params.category
-    const bookName = req.params.bookName
-    res.json(lore[category][bookName])
-})
-
-// app.get('/lorebook/?category=category?bookName=bookname', (req,res) => {
-//     const category = req.params.category
-//     console.log(category)
-//     res.json(lore[category])
-// })
