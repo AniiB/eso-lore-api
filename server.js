@@ -263,7 +263,7 @@ const lore = {
 // ]
 // }
 
-app.listen(PORT, (req, res) => {
+app.listen(process.env.PORT || PORT, () => {
     console.log('Listening on Port ' + PORT)
 })
 
