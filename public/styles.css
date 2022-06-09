@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+}
+body {
+    font-family: monospace;
+    color:white;
+    height: 100vh;
+    display: flex;
+    flex-direction : column;
+    align-items:center;
+    background: url('img/grunge.png');
+    background-color: rgba(0,0,0,0.8)
+}
+body > * {
+    margin:2rem;
+}
+section {
+    background-color: rgba(0,0,0,0.5);
+    border : 2px solid #a0a2a7;
+    box-shadow: 3px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 0 auto;
+    margin: 2rem;
+    padding: 2rem;
+}
+
+code {
+    
+    font-size: 20px;
+}
+
