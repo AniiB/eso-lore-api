@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Remove Books</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form action="/addbook" method="POST">
+        <div>
+            <input type="text" name="name" placeholder="Book Name" required>
+            <input type="text" name="author" placeholder="Author">
+            <input type="text" name="location" placeholder="Location">
+            <input type="text" name="category" placeholder="Category">
+        </div>
+
+        <input class="btn" type="submit" value="Add Book">
+    </form>
+
+    <h2>Current books in the DB</h2>
+    <ul class="books">
+        <% for(let i=0; i < books.length; i++) {%>
+            <li class ="bookItem">
+                <span>
+                    <%= books[i].name %>
+                </span>
+                <i class="fa-solid fa-xmark"></i>
+            </li>
+            <% } %>
+    </ul>
+    <script src="https://kit.fontawesome.com/33cf593d70.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+
+</html>
