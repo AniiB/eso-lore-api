@@ -1,27 +1,31 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 h1 {
     text-align: center;
 }
+
 body {
     font-family: monospace;
-    color:white;
+    color: white;
     height: 100vh;
     display: flex;
-    flex-direction : column;
-    align-items:center;
+    flex-direction: column;
+    align-items: center;
     background: url('img/grunge.png');
-    background-color: rgba(0,0,0,0.8)
+    background-color: rgba(0, 0, 0, 0.8)
 }
-body > * {
-    margin:2rem;
+
+body>* {
+    margin: 2rem;
 }
+
 section {
-    background-color: rgba(0,0,0,0.5);
-    border : 2px solid #a0a2a7;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #a0a2a7;
     box-shadow: 3px 0px 5px 0px rgba(0, 0, 0, 0.5);
     text-align: center;
     margin: 0 auto;
@@ -30,7 +34,67 @@ section {
 }
 
 code {
-    
+
     font-size: 20px;
 }
+.route a {
+    color : white;
+}
 
+/* EJS STYLES */
+form div {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 350px;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    margin: 0.7rem;
+}
+
+.btn {
+    font-family: monospace;
+    font-weight: bold;
+    margin-top: 2rem;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 16px;
+    border: 2px solid white;
+    color: white;
+    background: #151511;
+
+}
+
+.btn,
+i {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+    opacity: 0.75;
+    border: 2px solid red;
+    color: red;
+}
+
+i:hover {
+    opacity: 0.75;
+    color: red;
+}
+
+.books {
+    width: 350px;
+}
+
+.bookItem {
+    padding: 0.25rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+}
