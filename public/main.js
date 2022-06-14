@@ -29,19 +29,19 @@ async function deleteBook(btn) {
 
 
 async function updateDetails() {
-    let name = document.querySelector('input[name="nameChange"]').value
-    let author = document.querySelector('input[name="authorChange"]').value
-    let location = document.querySelector('input[name="locationChange"]').value
-    let category = document.querySelector('input[name="categoryChange"]').value
+    let name = document.querySelector('input[name="nameChange"]').value.trim()
+    let authorNew = document.querySelector('input[name="authorChange"]').value.trim()
+    let locationNew = document.querySelector('input[name="locationChange"]').value.trim()
+    let categoryNew = document.querySelector('input[name="categoryChange"]').value.trim()
     console.log(name, author, location, category)
     const response = await fetch('/updatedetails', {
         method: 'put',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             name: name,
-            author: author,
-            location: location,
-            category: category
+            author: authorNew,
+            location: locationNew,
+            category: categoryNew
         })
     })
     let data = await response.json()
