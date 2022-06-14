@@ -97,7 +97,7 @@ app.delete('/deletebook', async (req, res) => {
     }
 })
 
-//update missing entries
+//PUT request to update missing entries
 app.put('/updatedetails', async (req, res) => {
     try {
         let response
@@ -114,7 +114,7 @@ app.put('/updatedetails', async (req, res) => {
             })
             console.log(response)
         }
-        //update location if author isn't an empty string
+        //update location if location isn't an empty string
         if (obj.location !== '') {
             response = await db.collection(dbName).updateOne({
                 name: obj.name
@@ -125,7 +125,7 @@ app.put('/updatedetails', async (req, res) => {
             })
             console.log(response)
         }
-        //update category if author isn't an empty string
+        //update category if category isn't an empty string
         if (obj.category !== '') {
             response = await db.collection(dbName).updateOne({
                 name: obj.name
