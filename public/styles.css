@@ -30,18 +30,26 @@ section {
     text-align: center;
     margin: 0 auto;
     margin: 2rem;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 code {
 
     font-size: 20px;
 }
+
 .route a {
-    color : white;
+    color: white;
 }
 
-/* EJS STYLES */
+/*================
+    EJS STYLES 
+================*/
+
+.inputSection {
+    display: flex;
+}
+
 form div {
     display: flex;
     flex-wrap: wrap;
@@ -76,7 +84,10 @@ i {
 
 .btn:hover,
 .btn:focus,
-.btn:active {
+.btn:active,
+.updateInfo:hover,
+.updateInfo:focus,
+.updateInfo:active {
     opacity: 0.75;
     border: 2px solid red;
     color: red;
@@ -97,4 +108,16 @@ i:hover {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid grey;
+}
+
+@media(max-width:770px) {
+    form>div {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:378px) {
+    .inputSection {
+        flex-direction: column;
+    }
 }

@@ -97,7 +97,51 @@ app.delete('/deletebook', async (req, res) => {
     }
 })
 
+//update missing entries
+app.put('/updatedetails', async (req, res) => {
+    try {
+        let response
+        let obj = req.body
 
+        //update author if author isn't an empty string
+        if (obj.author !== '') {
+            response = await db.collection(dbName).updateOne({
+                name: obj.name
+            }, {
+                $set: {
+                    author: obj.author
+                }
+            })
+            console.log(response)
+        }
+        //update location if author isn't an empty string
+        if (obj.location !== '') {
+            response = await db.collection(dbName).updateOne({
+                name: obj.name
+            }, {
+                $set: {
+                    location: obj.location
+                }
+            })
+            console.log(response)
+        }
+        //update category if author isn't an empty string
+        if (obj.category !== '') {
+            response = await db.collection(dbName).updateOne({
+                name: obj.name
+            }, {
+                $set: {
+                    category: obj.category
+                }
+            })
+            console.log(response)
+        }
+        res.json('Update Complete!')
+    } catch (err) {
+        console.error(err)
+    }
+
+})
 
 // Connecting to DATABASE
 async function connectDB() {

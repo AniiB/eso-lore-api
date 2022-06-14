@@ -10,21 +10,35 @@
 </head>
 
 <body>
-    <form action="/addbook" method="POST">
-        <div>
-            <input type="text" name="name" placeholder="Book Name" required>
-            <input type="text" name="author" placeholder="Author">
-            <input type="text" name="location" placeholder="Location">
-            <input type="text" name="category" placeholder="Category">
-        </div>
+    <section class="inputSection">
+        <form action="/addbook" method="POST">
+            <h1>Add a new Book</h1>
+            <div>
+                <input type="text" name="name" placeholder="Book Name" required>
+                <input type="text" name="author" placeholder="Author">
+                <input type="text" name="location" placeholder="Location">
+                <input type="text" name="category" placeholder="Category">
+            </div>
 
-        <input class="btn" type="submit" value="Add Book">
-    </form>
+            <input class="btn" type="submit" value="Add Book">
+        </form>
+        <form>
+            <h1>Update entries</h1>
+            <div>
+                <input type="text" name="nameChange" placeholder="Book Name" required>
+                <input type="text" name="authorChange" placeholder="Author">
+                <input type="text" name="locationChange" placeholder="Location">
+                <input type="text" name="categoryChange" placeholder="Category">
+            </div>
+
+            <input class="btn updateInfo" type="submit" value="update Info">
+        </form>
+    </section>
 
     <h2>Current books in the DB</h2>
     <ul class="books">
         <% for(let i=0; i < books.length; i++) {%>
-            <li class ="bookItem">
+            <li class="bookItem">
                 <span>
                     <%= books[i].name %>
                 </span>
