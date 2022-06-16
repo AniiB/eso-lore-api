@@ -101,10 +101,18 @@ app.delete('/deletebook', async (req, res) => {
 app.put('/updatedetails', async (req, res) => {
     try {
         let response
-        let obj = req.body
-
+        let obj = await req.body
         //update author if author isn't an empty string
-        if (obj.author !== '') {
+        if (obj.author == 'reset') {
+            response = await db.collection(dbName).updateOne({
+                name: obj.name
+            }, {
+                $set: {
+                    author: ''
+                }
+            })
+            console.log(response)
+        } else if (obj.author !== '') {
             response = await db.collection(dbName).updateOne({
                 name: obj.name
             }, {
@@ -115,7 +123,16 @@ app.put('/updatedetails', async (req, res) => {
             console.log(response)
         }
         //update location if location isn't an empty string
-        if (obj.location !== '') {
+        if (obj.locaton == 'reset') {
+            response = await db.collection(dbName).updateOne({
+                name: obj.name
+            }, {
+                $set: {
+                    location: ''
+                }
+            })
+            console.log(response)
+        } else if (obj.location !== '') {
             response = await db.collection(dbName).updateOne({
                 name: obj.name
             }, {
@@ -126,7 +143,17 @@ app.put('/updatedetails', async (req, res) => {
             console.log(response)
         }
         //update category if category isn't an empty string
-        if (obj.category !== '') {
+        if (obj.lcategory == 'reset') {
+            response = await db.collection(dbName).updateOne({
+                name: obj.name
+            }, {
+                $set: {
+                    category: ''
+                }
+            })
+            console.log(response)
+
+        } else if (obj.category !== '') {
             response = await db.collection(dbName).updateOne({
                 name: obj.name
             }, {
@@ -140,7 +167,6 @@ app.put('/updatedetails', async (req, res) => {
     } catch (err) {
         console.error(err)
     }
-
 })
 
 // Connecting to DATABASE

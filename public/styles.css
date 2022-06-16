@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url('img/grunge.png');
+    background: url('img/grunge.webp');
     background-color: rgba(0, 0, 0, 0.8)
 }
 

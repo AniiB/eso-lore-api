@@ -33,7 +33,6 @@ async function updateDetails() {
     let authorNew = document.querySelector('input[name="authorChange"]').value.trim()
     let locationNew = document.querySelector('input[name="locationChange"]').value.trim()
     let categoryNew = document.querySelector('input[name="categoryChange"]').value.trim()
-    console.log(name, author, location, category)
     const response = await fetch('/updatedetails', {
         method: 'put',
         headers: { 'Content-Type': 'application/json' },
