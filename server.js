@@ -42,7 +42,7 @@ app.get('/lorebook', async (req, res) => {
 app.get('/lorebook/category/:category', async (req, res) => {
     try {
         let categoryReq = req.params.category
-        let books = await db.collection(dbName).findOne().toArray
+        let books = await db.collection(dbName).find().toArray()
         books = books.filter(book => book.category === categoryReq)
         res.json(books)
     } catch (err) {
@@ -148,7 +148,7 @@ async function connectDB() {
     try {
         const client = await MongoClient.connect(dbConnectionString, { useUnifiedTopology: true })
         console.log('Connected to database')
-        db = client.db(dbName)
+        db = await client.db(dbName)
     } catch (err) {
         console.error(err)
     }
