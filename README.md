@@ -1,21 +1,19 @@
-# Pocket Dictionary: <a href="https://p0cket-dictionary.netlify.app/" target="_blank">Check it out here!</a>
-<a href="https://p0cket-dictionary.netlify.app/" target="_blank"><img src="https://i.giphy.com/media/Rsawf36RxuD7NtZ98k/giphy.webp" /></a>
+# Elder Scrolls Online Lorebooks: <a href="https://es-lore-api.herokuapp.com/" target="_blank">Check it out here!</a>
+<a href="https://es-lore-api.herokuapp.com/" target="_blank"><img src="https://i.giphy.com/media/Rsawf36RxuD7NtZ98k/giphy.webp" /></a>
 
-Time to go back to school. And when you do take this dictionary with you!
+A collection of books from Elder Scrolls Online and the location to find them!
 
-## Tech used: HTML | CSS | Vanilla JS
+## Tech used: HTML | CSS | JavaScript | MongoDB | Node.js | Express | eJS
 
-An API project. My learning was focused on fetching data from an API and then use it to manipulate the DOM.
+A Backend project focused on using CRUD operations. API on MongoDB Atlas and backend created using JS, Node and Express. Used eJS to to render and serve a dynamic page.
 
 ## Optimizations
 
 Optimizations I'd like to add in the future
 
--List of words previously searched saved as a shortcut for the user.
-
--Using localstorage to keep the search query list saved on return.
+MongoDB documents to hold more than a single entry in arrays or objects.
 
 
 ## Lessons Learned:
 
-Learned how to navigate through multi-dimensional arrays and objects. Learned how to append data from an API to a dynamically generated table.
+CRUD operations to manipulate a collection on mongoDB from a client.
