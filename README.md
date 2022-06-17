@@ -53,7 +53,7 @@ A collection of books from Elder Scrolls Online and the location to find them!
 
 ## Delete or DELETE request
 
-- Press the x to delete it.
+- Click x to delete it.
 
   ![firefox_nyHzLYVaOf](https://user-images.githubusercontent.com/96686113/174277056-685c6b03-4483-4b77-8cfb-cef6c44ce731.png)
 
